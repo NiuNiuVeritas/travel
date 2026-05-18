@@ -395,6 +395,71 @@ p:last-child { margin-bottom: 0; }
   color: var(--muted);
 }
 
+/* ========== map ========== */
+.map-card {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+#flightMap {
+  width: 100%;
+  height: 460px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-warm);
+}
+.leaflet-container {
+  background: #e8dfcd !important;
+  font-family: var(--sans);
+  outline: none;
+}
+.leaflet-tile-pane {
+  filter: sepia(0.18) saturate(0.75) hue-rotate(-8deg) brightness(1.02) contrast(0.95);
+}
+.leaflet-control-attribution {
+  background: rgba(251, 245, 233, 0.85) !important;
+  font-size: 9px !important;
+  color: var(--muted) !important;
+  padding: 1px 6px !important;
+}
+.leaflet-control-attribution a { color: var(--ink-2) !important; }
+
+.flight-marker {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+}
+.fm-dot {
+  display: block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 4px rgba(199, 90, 31, 0.18);
+}
+.fm-name {
+  position: absolute;
+  left: 14px;
+  top: -5px;
+  font-family: var(--serif);
+  font-size: 12px;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 1px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  border: 1px solid var(--line);
+}
+.fm-name.left {
+  left: auto;
+  right: 14px;
+}
+@media (max-width: 600px) {
+  #flightMap { height: 360px; }
+  .fm-name { font-size: 11px; }
+}
+
 /* ========== city page ========== */
 .page-city {
   display: none;

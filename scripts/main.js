@@ -67,6 +67,109 @@
   }
 })();
 
+// ===== flight map =====
+window._flightMap = null;
+function initFlightMap() {
+  if (!window.L) return;
+  const el = document.getElementById('flightMap');
+  if (!el) return;
+  if (window._flightMap) {
+    window._flightMap.invalidateSize();
+    return;
+  }
+
+  const cities = {
+    tfu: { name: '成都',   latlng: [30.31, 104.44], side: 'left' },
+    sin: { name: '新加坡', latlng: [1.36,  103.99], side: 'left' },
+    bwn: { name: '文莱',   latlng: [4.94,  114.93], side: 'right' },
+    bki: { name: '亚庇',   latlng: [5.94,  116.05], side: 'right' },
+    sdk: { name: '山打根', latlng: [5.90,  118.06], side: 'right' },
+  };
+
+  const legs = [
+    ['tfu','sin'], ['sin','bwn'], ['bwn','bki'], ['bki','sdk'],
+    ['sdk','bki'], ['bki','bwn'], ['bwn','sin'], ['sin','tfu'],
+  ];
+
+  const map = L.map('flightMap', {
+    center: [14, 110],
+    zoom: 4,
+    minZoom: 3,
+    maxZoom: 7,
+    zoomControl: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    attributionControl: true,
+  });
+  window._flightMap = map;
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19,
+    attribution: '© OpenStreetMap · © CARTO'
+  }).addTo(map);
+
+  // city markers
+  Object.values(cities).forEach(c => {
+    const icon = L.divIcon({
+      className: 'flight-marker',
+      html: `<span class="fm-dot"></span><span class="fm-name ${c.side === 'left' ? 'left' : ''}">${c.name}</span>`,
+      iconSize: [10, 10],
+      iconAnchor: [5, 5]
+    });
+    L.marker(c.latlng, { icon, interactive: false }).addTo(map);
+  });
+
+  // bezier curve between two cities
+  function curve(a, b, k) {
+    const [y1, x1] = a, [y2, x2] = b;
+    const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+    const dx = x2 - x1, dy = y2 - y1;
+    const cx = mx + (-dy) * k;
+    const cy = my + ( dx) * k;
+    const pts = [];
+    for (let t = 0; t <= 1.001; t += 0.02) {
+      const u = 1 - t;
+      const px = u*u*x1 + 2*u*t*cx + t*t*x2;
+      const py = u*u*y1 + 2*u*t*cy + t*t*y2;
+      pts.push([py, px]);
+    }
+    return pts;
+  }
+
+  // forward legs slight curve up, return legs slight curve down so they don't overlap
+  legs.forEach(([from, to], i) => {
+    const isReturn = i >= 4;
+    const k = isReturn ? -0.12 : 0.12;
+    L.polyline(curve(cities[from].latlng, cities[to].latlng, k), {
+      color: '#c75a1f',
+      weight: 1.4,
+      opacity: 0.75,
+      dashArray: '5 5',
+      interactive: false,
+    }).addTo(map);
+  });
+
+  const bounds = Object.values(cities).map(c => c.latlng);
+  map.fitBounds(bounds, { padding: [50, 60] });
+}
+
+// hook map init to page switching
+(function () {
+  const stage = document.getElementById('stage');
+  if (!stage) return;
+  // observe class change on intro page
+  const intro = document.querySelector('[data-page="intro"]');
+  if (!intro) return;
+  const obs = new MutationObserver(() => {
+    if (intro.classList.contains('on')) {
+      setTimeout(initFlightMap, 60);
+    }
+  });
+  obs.observe(intro, { attributes: true, attributeFilter: ['class'] });
+  if (intro.classList.contains('on')) setTimeout(initFlightMap, 60);
+})();
+
 // ===== graceful image fallback =====
 // hide hero photo if the underlying image fails to load — gradient tint still shows
 (function () {

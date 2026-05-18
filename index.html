@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -126,6 +127,11 @@
             <div class="city"><span class="dot"></span><span class="name">成都</span></div>
           </div>
           <p class="route-foot">机票合计 ¥ 8,700 / 两人。</p>
+        </div>
+
+        <div class="map-card">
+          <p class="route-title">轨迹</p>
+          <div id="flightMap"></div>
         </div>
       </div>
     </section>
@@ -525,6 +531,7 @@
   </main>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="scripts/main.js"></script>
 </body>
 </html>
