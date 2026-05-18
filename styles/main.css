@@ -411,12 +411,12 @@ p:last-child { margin-bottom: 0; }
   background: var(--bg-warm);
 }
 .leaflet-container {
-  background: #cdd9d2 !important;
+  background: #e8dcc4 !important;
   font-family: var(--sans);
   outline: none;
 }
 .leaflet-tile-pane {
-  filter: sepia(0.32) saturate(0.85) hue-rotate(-6deg) brightness(0.98) contrast(0.95);
+  filter: saturate(0.95) contrast(0.95);
 }
 .leaflet-control-attribution {
   background: rgba(251, 245, 233, 0.85) !important;

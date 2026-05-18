@@ -103,10 +103,10 @@ function initFlightMap() {
   });
   window._flightMap = map;
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd',
-    maxZoom: 19,
-    attribution: '© OpenStreetMap · © CARTO'
+  L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {
+    maxZoom: 16,
+    minZoom: 1,
+    attribution: '© Stadia · Stamen · OpenStreetMap'
   }).addTo(map);
 
   // city markers
@@ -120,13 +120,20 @@ function initFlightMap() {
     L.marker(c.latlng, { icon, interactive: false }).addTo(map);
   });
 
-  // bezier curve between two cities
-  function curve(a, b, k) {
+  // bezier curve — dir: +1 always arc north of straight line, -1 always arc south
+  function curve(a, b, dir) {
     const [y1, x1] = a, [y2, x2] = b;
     const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
     const dx = x2 - x1, dy = y2 - y1;
-    const cx = mx + (-dy) * k;
-    const cy = my + ( dx) * k;
+    // perpendicular, force to point north (positive lat)
+    let perpX = -dy, perpY = dx;
+    if (perpY < 0) { perpX = -perpX; perpY = -perpY; }
+    const len = Math.sqrt(perpX*perpX + perpY*perpY) || 1;
+    perpX /= len; perpY /= len;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    const offset = dist * 0.22 * dir;
+    const cx = mx + perpX * offset;
+    const cy = my + perpY * offset;
     const pts = [];
     for (let t = 0; t <= 1.001; t += 0.02) {
       const u = 1 - t;
@@ -137,14 +144,13 @@ function initFlightMap() {
     return pts;
   }
 
-  // forward legs curve one way, return legs the other — so round-trip pairs split visually
+  // forward legs arc north, return legs arc south
   legs.forEach(([from, to], i) => {
     const isReturn = i >= 4;
-    const k = isReturn ? -0.22 : 0.22;
-    L.polyline(curve(cities[from].latlng, cities[to].latlng, k), {
-      color: isReturn ? '#a04518' : '#c75a1f',
-      weight: 1.6,
-      opacity: isReturn ? 0.65 : 0.85,
+    L.polyline(curve(cities[from].latlng, cities[to].latlng, isReturn ? -1 : 1), {
+      color: isReturn ? '#9b3f15' : '#c75a1f',
+      weight: 1.8,
+      opacity: isReturn ? 0.7 : 0.9,
       dashArray: '6 5',
       interactive: false,
     }).addTo(map);
