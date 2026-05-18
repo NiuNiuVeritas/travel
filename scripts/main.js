@@ -79,11 +79,11 @@ function initFlightMap() {
   }
 
   const cities = {
-    tfu: { name: '成都',   latlng: [30.31, 104.44], side: 'left' },
-    sin: { name: '新加坡', latlng: [1.36,  103.99], side: 'left' },
-    bwn: { name: '文莱',   latlng: [4.94,  114.93], side: 'right' },
-    bki: { name: '亚庇',   latlng: [5.94,  116.05], side: 'right' },
-    sdk: { name: '山打根', latlng: [5.90,  118.06], side: 'right' },
+    tfu: { name: '成都',   latlng: [30.31, 104.44], pos: 'left' },
+    sin: { name: '新加坡', latlng: [1.36,  103.99], pos: 'top' },
+    bwn: { name: '文莱',   latlng: [4.94,  114.93], pos: 'left' },
+    bki: { name: '亚庇',   latlng: [5.94,  116.05], pos: 'top' },
+    sdk: { name: '山打根', latlng: [5.90,  118.06], pos: 'right' },
   };
 
   const legs = [
@@ -92,10 +92,10 @@ function initFlightMap() {
   ];
 
   const map = L.map('flightMap', {
-    center: [14, 110],
-    zoom: 4,
-    minZoom: 3,
-    maxZoom: 7,
+    center: [7, 112],
+    zoom: 5,
+    minZoom: 4,
+    maxZoom: 8,
     zoomControl: false,
     scrollWheelZoom: false,
     doubleClickZoom: false,
@@ -103,7 +103,7 @@ function initFlightMap() {
   });
   window._flightMap = map;
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
     subdomains: 'abcd',
     maxZoom: 19,
     attribution: '© OpenStreetMap · © CARTO'
@@ -113,7 +113,7 @@ function initFlightMap() {
   Object.values(cities).forEach(c => {
     const icon = L.divIcon({
       className: 'flight-marker',
-      html: `<span class="fm-dot"></span><span class="fm-name ${c.side === 'left' ? 'left' : ''}">${c.name}</span>`,
+      html: `<span class="fm-dot"></span><span class="fm-name ${c.pos}">${c.name}</span>`,
       iconSize: [10, 10],
       iconAnchor: [5, 5]
     });
@@ -137,21 +137,22 @@ function initFlightMap() {
     return pts;
   }
 
-  // forward legs slight curve up, return legs slight curve down so they don't overlap
+  // forward legs curve one way, return legs the other — so round-trip pairs split visually
   legs.forEach(([from, to], i) => {
     const isReturn = i >= 4;
-    const k = isReturn ? -0.12 : 0.12;
+    const k = isReturn ? -0.22 : 0.22;
     L.polyline(curve(cities[from].latlng, cities[to].latlng, k), {
-      color: '#c75a1f',
-      weight: 1.4,
-      opacity: 0.75,
-      dashArray: '5 5',
+      color: isReturn ? '#a04518' : '#c75a1f',
+      weight: 1.6,
+      opacity: isReturn ? 0.65 : 0.85,
+      dashArray: '6 5',
       interactive: false,
     }).addTo(map);
   });
 
-  const bounds = Object.values(cities).map(c => c.latlng);
-  map.fitBounds(bounds, { padding: [50, 60] });
+  // fit to the trip region — let 成都 line fade off-screen at the top
+  const bounds = [cities.sin.latlng, cities.bwn.latlng, cities.bki.latlng, cities.sdk.latlng];
+  map.fitBounds(bounds, { padding: [70, 70], maxZoom: 7 });
 }
 
 // hook map init to page switching

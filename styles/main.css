@@ -411,12 +411,12 @@ p:last-child { margin-bottom: 0; }
   background: var(--bg-warm);
 }
 .leaflet-container {
-  background: #e8dfcd !important;
+  background: #cdd9d2 !important;
   font-family: var(--sans);
   outline: none;
 }
 .leaflet-tile-pane {
-  filter: sepia(0.18) saturate(0.75) hue-rotate(-8deg) brightness(1.02) contrast(0.95);
+  filter: sepia(0.32) saturate(0.85) hue-rotate(-6deg) brightness(0.98) contrast(0.95);
 }
 .leaflet-control-attribution {
   background: rgba(251, 245, 233, 0.85) !important;
@@ -445,15 +445,22 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--serif);
   font-size: 12px;
   color: var(--ink);
-  background: var(--paper);
+  background: rgba(251, 245, 233, 0.92);
   padding: 1px 7px;
   border-radius: 3px;
   white-space: nowrap;
   border: 1px solid var(--line);
 }
 .fm-name.left {
-  left: auto;
-  right: 14px;
+  left: auto; right: 14px;
+}
+.fm-name.top {
+  left: 50%; top: auto; bottom: 16px;
+  transform: translateX(-50%);
+}
+.fm-name.bottom {
+  left: 50%; top: 16px;
+  transform: translateX(-50%);
 }
 @media (max-width: 600px) {
   #flightMap { height: 360px; }
