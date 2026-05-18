@@ -103,10 +103,10 @@ function initFlightMap() {
   });
   window._flightMap = map;
 
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {
-    maxZoom: 16,
-    minZoom: 1,
-    attribution: '© Stadia · Stamen · OpenStreetMap'
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19,
+    attribution: '© OpenStreetMap · © CARTO'
   }).addTo(map);
 
   // city markers
