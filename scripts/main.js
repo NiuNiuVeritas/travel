@@ -94,13 +94,14 @@ function initFlightMap() {
   const map = L.map('flightMap', {
     center: [7, 112],
     zoom: 5,
-    minZoom: 4,
-    maxZoom: 8,
-    zoomControl: false,
+    minZoom: 3,
+    maxZoom: 9,
+    zoomControl: true,
     scrollWheelZoom: false,
-    doubleClickZoom: false,
+    doubleClickZoom: true,
     attributionControl: true,
   });
+  map.zoomControl.setPosition('topright');
   window._flightMap = map;
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
