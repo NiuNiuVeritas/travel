@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5efe4">
+  <title>夏 · 2026 · 新加坡 文莱 沙巴</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <p class="brand-year">2026</p>
+      <p class="brand-name">夏</p>
+      <p class="brand-sub">7.23 — 8.07</p>
+    </div>
+
+    <nav class="nav">
+      <a href="#cover" data-page="cover" class="nav-link">
+        <span class="nav-num">00</span><span class="nav-text">封面</span>
+      </a>
+      <a href="#intro" data-page="intro" class="nav-link">
+        <span class="nav-num">01</span><span class="nav-text">缘起</span>
+      </a>
+      <p class="nav-group">日程</p>
+      <a href="#sg" data-page="sg" class="nav-link">
+        <span class="nav-num">02</span><span class="nav-text">新加坡</span><span class="nav-date">7.23 – 7.26</span>
+      </a>
+      <a href="#bn" data-page="bn" class="nav-link">
+        <span class="nav-num">03</span><span class="nav-text">文莱</span><span class="nav-date">7.26 – 7.27</span>
+      </a>
+      <a href="#kk" data-page="kk" class="nav-link">
+        <span class="nav-num">04</span><span class="nav-text">亚庇</span><span class="nav-date">7.27 – 7.31</span>
+      </a>
+      <a href="#jungle" data-page="jungle" class="nav-link">
+        <span class="nav-num">05</span><span class="nav-text">雨林</span><span class="nav-date">7.31 – 8.04</span>
+      </a>
+      <a href="#island" data-page="island" class="nav-link">
+        <span class="nav-num">06</span><span class="nav-text">海岛</span><span class="nav-date">8.04 – 8.06</span>
+      </a>
+      <a href="#home" data-page="home" class="nav-link">
+        <span class="nav-num">07</span><span class="nav-text">归途</span><span class="nav-date">8.06 – 8.07</span>
+      </a>
+      <p class="nav-group">参考</p>
+      <a href="#stay" data-page="stay" class="nav-link">
+        <span class="nav-num">08</span><span class="nav-text">住宿一览</span>
+      </a>
+      <a href="#budget" data-page="budget" class="nav-link">
+        <span class="nav-num">09</span><span class="nav-text">预算</span>
+      </a>
+      <a href="#schedule" data-page="schedule" class="nav-link">
+        <span class="nav-num">10</span><span class="nav-text">时间表</span>
+      </a>
+      <a href="#backstage" data-page="backstage" class="nav-link">
+        <span class="nav-num">11</span><span class="nav-text">幕后</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="cd-mini">
+        <span id="cdNum">—</span>
+        <span class="cd-lbl">天后启程</span>
+      </div>
+    </div>
+  </aside>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="打开目录">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- ============ STAGE ============ -->
+  <main class="stage" id="stage">
+
+    <!-- ====== COVER ====== -->
+    <section class="page page-cover" data-page="cover">
+      <div class="cover-bg"></div>
+      <div class="cover-content">
+        <p class="cover-kicker">2026 · SUMMER</p>
+        <h1 class="cover-title">夏</h1>
+        <p class="cover-tagline">三个国家，一片雨林，两座海。</p>
+        <div class="cover-meta">
+          <div><p class="cm-k">日期</p><p class="cm-v">07.23 — 08.07</p></div>
+          <div><p class="cm-k">天数</p><p class="cm-v">16</p></div>
+          <div><p class="cm-k">同行</p><p class="cm-v">两人</p></div>
+        </div>
+        <a class="cover-go" href="#intro">从这里开始 →</a>
+      </div>
+    </section>
+
+    <!-- ====== INTRO ====== -->
+    <section class="page page-intro" data-page="intro">
+      <div class="intro-wrap">
+        <p class="page-kicker">01 / 缘起</p>
+        <h2 class="page-title">向东</h2>
+        <div class="intro-body">
+          <p class="lede">一张演唱会票，走了整个南洋。</p>
+        </div>
+
+        <div class="route-card">
+          <p class="route-title">航线</p>
+          <div class="route-strip">
+            <div class="city"><span class="dot"></span><span class="name">成都</span></div>
+            <span class="leg">SQ843</span>
+            <div class="city hot"><span class="dot"></span><span class="name">新加坡</span></div>
+            <span class="leg">BI424</span>
+            <div class="city"><span class="dot"></span><span class="name">文莱</span></div>
+            <span class="leg">BI827</span>
+            <div class="city hot"><span class="dot"></span><span class="name">亚庇</span></div>
+            <span class="leg">AK6490</span>
+            <div class="city"><span class="dot"></span><span class="name">山打根</span></div>
+            <span class="leg">AK6487</span>
+            <div class="city hot"><span class="dot"></span><span class="name">亚庇</span></div>
+            <span class="leg">BI826</span>
+            <div class="city"><span class="dot"></span><span class="name">文莱</span></div>
+            <span class="leg">BI423</span>
+            <div class="city hot"><span class="dot"></span><span class="name">新加坡</span></div>
+            <span class="leg">3U3920</span>
+            <div class="city"><span class="dot"></span><span class="name">成都</span></div>
+          </div>
+          <p class="route-foot">机票合计 ¥ 8,700 / 两人。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SG ====== -->
+    <section class="page page-city" data-page="sg">
+      <figure class="hero-photo" style="--ph: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1800&auto=format&fit=crop&q=80');">
+        <div class="hero-tint sg"></div>
+        <figcaption class="hero-cap">Singapore · 7.23 — 7.26</figcaption>
+      </figure>
+      <div class="city-wrap">
+        <p class="page-kicker">02 / 新加坡</p>
+        <h2 class="page-title">演唱会</h2>
+        <div class="city-body">
+          <p>住 Bugis 一带，离 Indoor Stadium 一站地铁。</p>
+          <p>7 月 24 日是 EXO PLANET。白天 Kampong Gelam 蹲咖啡店，傍晚直奔场馆。</p>
+          <p>剩下两天，怎么舒服怎么来。</p>
+        </div>
+
+        <ol class="days">
+          <li><span class="d-when">07.23 周三</span><p class="d-text">SQ843 落地新加坡，深夜到酒店，倒头就睡。</p></li>
+          <li class="hl"><span class="d-when">07.24 周四</span><p class="d-text">演唱会日。白天 Kampong Gelam，傍晚 Indoor Stadium。<span class="tag">EXO PLANET</span></p></li>
+          <li><span class="d-when">07.25 周五</span><p class="d-text">放空一整天。Jurong Lake Gardens 散散步，或者继续 Bugis 喝咖啡。</p></li>
+          <li><span class="d-when">07.26 周六</span><p class="d-text">傍晚去樟宜 T2 搭 BI424 飞文莱。</p></li>
+        </ol>
+
+        <a class="next-link" href="#bn">下一段 · 文莱 →</a>
+      </div>
+    </section>
+
+    <!-- ====== BN ====== -->
+    <section class="page page-city" data-page="bn">
+      <figure class="hero-photo" style="--ph: url('https://images.unsplash.com/photo-1542367592-8849eb950fd8?w=1800&auto=format&fit=crop&q=80');">
+        <div class="hero-tint bn"></div>
+        <figcaption class="hero-cap">Bandar Seri Begawan · 7.26 — 7.27</figcaption>
+      </figure>
+      <div class="city-wrap">
+        <p class="page-kicker">03 / 文莱</p>
+        <h2 class="page-title">中场</h2>
+        <div class="city-body">
+          <p>晚上落地，第二天傍晚走。洗澡、睡觉、慢慢吃个早午饭。</p>
+        </div>
+
+        <ol class="days">
+          <li><span class="d-when">07.26 周六 夜</span><p class="d-text">BI424 抵 BWN，大概晚上十一点四十。入住就好。</p></li>
+          <li><span class="d-when">07.27 周日</span><p class="d-text">白天慢，傍晚 BI827 飞亚庇。落地 BKI 大约八点。</p></li>
+        </ol>
+
+        <a class="next-link" href="#kk">下一段 · 亚庇 →</a>
+      </div>
+    </section>
+
+    <!-- ====== KK ====== -->
+    <section class="page page-city" data-page="kk">
+      <figure class="hero-photo" style="--ph: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&auto=format&fit=crop&q=80');">
+        <div class="hero-tint kk"></div>
+        <figcaption class="hero-cap">Kota Kinabalu · 7.27 — 7.31</figcaption>
+      </figure>
+      <div class="city-wrap">
+        <p class="page-kicker">04 / 亚庇</p>
+        <h2 class="page-title">海滨</h2>
+        <div class="city-body">
+          <p>两晚 Tanjung Aru，泳池和沙滩之间挪一挪。傍晚的日落是保留节目。</p>
+          <p>7 月 29 日往神山上去，住 Kundasang。园里走步道，清晨看树梢上的鸟。第二天下午回市区，给早班飞机留个缓冲。</p>
+        </div>
+
+        <ol class="days">
+          <li><span class="d-when">07.27 周日 夜</span><p class="d-text">从文莱飞来，直接进海边 resort。</p></li>
+          <li class="hl"><span class="d-when">07.28 周一</span><p class="d-text">纯躺。傍晚 Tanjung Aru 看日落。<span class="tag">海</span></p></li>
+          <li><span class="d-when">07.29 周二</span><p class="d-text">上午动身去 Kundasang，下午 Kinabalu Park 周边步道。</p></li>
+          <li class="hl"><span class="d-when">07.30 周三</span><p class="d-text">清晨观鸟。午后回 KK 市区。<span class="tag">山</span></p></li>
+        </ol>
+
+        <a class="next-link" href="#jungle">下一段 · 雨林 →</a>
+      </div>
+    </section>
+
+    <!-- ====== JUNGLE ====== -->
+    <section class="page page-city" data-page="jungle">
+      <figure class="hero-photo" style="--ph: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&auto=format&fit=crop&q=80');">
+        <div class="hero-tint jungle"></div>
+        <figcaption class="hero-cap">Sandakan · Kinabatangan · 7.31 — 8.04</figcaption>
+      </figure>
+      <div class="city-wrap">
+        <p class="page-kicker">05 / 雨林</p>
+        <h2 class="page-title">雨林</h2>
+        <div class="city-body">
+          <p>7 月 31 日中午飞山打根，下午直奔 Sepilok：先看猩猩中心和马来熊救护中心。</p>
+          <p>8 月 1 日早起去 RDC 走树冠天桥，中午集合进京那巴当岸河。三天两夜全在河边，清晨和傍晚各一次 cruise。运气好能见到长鼻猴、犀鸟，可能还有森林大象。</p>
+          <p>8 月 3 日回到市区，傍晚把这座小城慢慢逛完：Heritage Trail、Agnes Keith 故居、English Tea House。</p>
+        </div>
+
+        <ol class="days">
+          <li><span class="d-when">07.31 周四</span><p class="d-text">AK6490 飞抵 SDK，下午 BSBCC + Sepilok 猩猩中心。</p></li>
+          <li class="hl"><span class="d-when">08.01 周五</span><p class="d-text">RDC 看清晨，中午进山。<span class="tag">河</span></p></li>
+          <li class="hl"><span class="d-when">08.02 周六</span><p class="d-text">河上的第二天。清晨与傍晚两场 cruise。<span class="tag">河</span></p></li>
+          <li><span class="d-when">08.03 周日</span><p class="d-text">回 Sandakan 市区。Heritage Trail → Agnes Keith → English Tea House。</p></li>
+        </ol>
+
+        <a class="next-link" href="#island">下一段 · 海岛 →</a>
+      </div>
+    </section>
+
+    <!-- ====== ISLAND ====== -->
+    <section class="page page-city" data-page="island">
+      <figure class="hero-photo" style="--ph: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&auto=format&fit=crop&q=80');">
+        <div class="hero-tint island"></div>
+        <figcaption class="hero-cap">Manukan / Mantanani · 8.04 — 8.06</figcaption>
+      </figure>
+      <div class="city-wrap">
+        <p class="page-kicker">06 / 海岛</p>
+        <h2 class="page-title">跳岛</h2>
+        <div class="city-body">
+          <p>从山打根飞回亚庇，上岛。两个选项还没定下来：</p>
+          <p><strong>Manukan</strong> 离亚庇近，船班勤，回程稳——胜在不折腾。<strong>Mantanani</strong> 远一些，海色更通透，但要看天看船。</p>
+          <p>两边都先订能退的房，到 6 月底再决定。8 月偶有阵雨，水上活动放上午，下午看天。</p>
+        </div>
+
+        <ol class="days">
+          <li><span class="d-when">08.04 周一</span><p class="d-text">AK6487 飞回 BKI，转车转船上岛。</p></li>
+          <li class="hl"><span class="d-when">08.05 周二</span><p class="d-text">浮潜、看海、发呆。<span class="tag">海</span></p></li>
+          <li><span class="d-when">08.06 周三</span><p class="d-text">上午回 KK，下午起飞回程。</p></li>
+        </ol>
+
+        <a class="next-link" href="#home">下一段 · 归途 →</a>
+      </div>
+    </section>
+
+    <!-- ====== HOME ====== -->
+    <section class="page page-city" data-page="home">
+      <figure class="hero-photo" style="--ph: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1800&auto=format&fit=crop&q=80');">
+        <div class="hero-tint home"></div>
+        <figcaption class="hero-cap">Home · 8.06 — 8.07</figcaption>
+      </figure>
+      <div class="city-wrap">
+        <p class="page-kicker">07 / 归途</p>
+        <h2 class="page-title">夜航</h2>
+        <div class="city-body">
+          <p>8 月 6 日下午从亚庇起飞，绕文莱回新加坡，大约八点半到樟宜 T2。取行李、办川航值机，剩下的时间在机场吃顿饭。</p>
+          <p>凌晨 1 点 10 分起飞，五点多到成都。整趟就这样收尾。</p>
+        </div>
+
+        <ol class="days">
+          <li><span class="d-when">08.06 周三 晚</span><p class="d-text">BI826 → BI423 抵 SIN T2，办 3U3920 值机。</p></li>
+          <li class="hl"><span class="d-when">08.07 周四 凌晨</span><p class="d-text">3U3920 起飞，约 05:55 落成都。<span class="tag">家</span></p></li>
+        </ol>
+
+        <a class="next-link" href="#stay">下一段 · 住宿一览 →</a>
+      </div>
+    </section>
+
+    <!-- ====== STAY ====== -->
+    <section class="page page-list" data-page="stay">
+      <div class="list-wrap">
+        <p class="page-kicker">08 / 参考</p>
+        <h2 class="page-title">住宿</h2>
+        <p class="page-lede">每一段挑两到三个候选，按可退价先锁，6 月底前砍掉多余的。</p>
+
+        <div class="stay-grid">
+          <article class="stay">
+            <p class="stay-where">新加坡 · 3 晚</p>
+            <h3 class="stay-name">Bugis / Lavender</h3>
+            <p class="stay-opt">Hotel Traveltine · Village Hotel Bugis · V Hotel Lavender</p>
+            <p class="stay-why">演唱会和地铁都顺。Traveltine 离 Nicoll Highway 地铁五分钟，到 Sports Hub 一站。</p>
+            <p class="stay-price">S$ 120 – 190 / 晚</p>
+          </article>
+          <article class="stay">
+            <p class="stay-where">文莱 · 1 晚</p>
+            <h3 class="stay-name">机场附近随便挑</h3>
+            <p class="stay-opt">只为睡觉，不挑酒店</p>
+            <p class="stay-why">第二天傍晚再走，不必去市中心。</p>
+            <p class="stay-price">—</p>
+          </article>
+          <article class="stay">
+            <p class="stay-where">亚庇海边 · 2 晚</p>
+            <h3 class="stay-name">Pacific Sutera / Nexus Karambunai</h3>
+            <p class="stay-opt">升级款：Magellan Sutera · Shangri-La Tanjung Aru</p>
+            <p class="stay-why">海边大盘 resort，泳池、沙滩、日落齐了。</p>
+            <p class="stay-price">S$ 116 – 170 / 晚</p>
+          </article>
+          <article class="stay urgent">
+            <p class="stay-where">神山 · 1 晚</p>
+            <h3 class="stay-name">Kinabalu Pine · Mountain Valley</h3>
+            <p class="stay-opt">备选：Sutera Sanctuary Lodges @ Kinabalu Park</p>
+            <p class="stay-why">观鸟和散步用。园里的 lodge 早起最省事，但常常订满。</p>
+            <p class="stay-price">S$ 78 – 100 / 晚</p>
+            <p class="stay-flag">近期余房紧</p>
+          </article>
+          <article class="stay">
+            <p class="stay-where">亚庇市区 · 1 晚</p>
+            <h3 class="stay-name">Hyatt Regency · Le Meridien</h3>
+            <p class="stay-opt">备选：机场附近 Hilton KK Airport / Tune Hotel</p>
+            <p class="stay-why">7 月 30 日的过渡夜。第二天早班飞山打根，从山里直冲不踏实。</p>
+            <p class="stay-price">S$ 80 – 130 / 晚</p>
+          </article>
+          <article class="stay">
+            <p class="stay-where">Sepilok · 1 晚</p>
+            <h3 class="stay-name">Sepilok Nature Lodge</h3>
+            <p class="stay-opt">备选：My Nature Resort · Paganakan Dii</p>
+            <p class="stay-why">离猩猩中心和马来熊救护中心近，早起省力。</p>
+            <p class="stay-price">中档</p>
+          </article>
+          <article class="stay urgent">
+            <p class="stay-where">京那巴当岸 · 2 晚</p>
+            <h3 class="stay-name">River Junkie / Tungog / Sukau</h3>
+            <p class="stay-opt">三家 operator 之间选一家 — 住宿和 tour 一起</p>
+            <p class="stay-why">River Junkie 性价比好；Tungog 更原生；Sukau Lodge 最舒服但贵。</p>
+            <p class="stay-price">RM 1,300 – 2,950 / 人</p>
+            <p class="stay-flag">未决</p>
+          </article>
+          <article class="stay">
+            <p class="stay-where">山打根 · 1 晚</p>
+            <h3 class="stay-name">Sabah Hotel Sandakan</h3>
+            <p class="stay-opt">8 月 3 日，市区段一夜</p>
+            <p class="stay-why">Heritage Trail 与 English Tea House 都在附近。</p>
+            <p class="stay-price">S$ 130 / 晚</p>
+          </article>
+          <article class="stay urgent">
+            <p class="stay-where">海岛 · 2 晚</p>
+            <h3 class="stay-name">Manukan / Mantanani</h3>
+            <p class="stay-opt">Sutera @ Manukan · Sutera @ Mantanani · JSK Mantanani</p>
+            <p class="stay-why">先两手抓可退备选,6 月底再决定走哪边。</p>
+            <p class="stay-price">USD 222 – 402 / 两晚</p>
+            <p class="stay-flag">未决</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BUDGET ====== -->
+    <section class="page page-list" data-page="budget">
+      <div class="list-wrap">
+        <p class="page-kicker">09 / 参考</p>
+        <h2 class="page-title">预算</h2>
+        <p class="page-lede">两人合计的实操数。机票已经付掉，剩下的项目都还能在档位之间挪。</p>
+
+        <div class="budget-hero">
+          <div>
+            <p class="bh-lbl">推荐档 · 两人</p>
+            <p class="bh-num">¥ 32,000</p>
+            <p class="bh-sub">约 ¥ 16,000 / 人</p>
+          </div>
+        </div>
+
+        <div class="bars">
+          <div class="bar" style="--w:27%"><span>机票（已定）</span><b>¥ 8,700</b></div>
+          <div class="bar" style="--w:28%"><span>住宿</span><b>≈ ¥ 9,000</b></div>
+          <div class="bar" style="--w:20%"><span>京那巴当岸 + 门票 + 团费</span><b>≈ ¥ 6,400</b></div>
+          <div class="bar" style="--w:11%"><span>餐饮</span><b>≈ ¥ 3,400</b></div>
+          <div class="bar" style="--w:8%"><span>杂费 · 接驳</span><b>≈ ¥ 2,500</b></div>
+          <div class="bar" style="--w:6%"><span>海岛附加</span><b>≈ ¥ 2,000</b></div>
+        </div>
+
+        <div class="tiers">
+          <div class="tier">
+            <p class="t-tag">省一点</p>
+            <p class="t-num">¥ 26,000 — 29,000</p>
+            <p class="t-note">京那巴当岸选 dorm，海岛走 Manukan</p>
+          </div>
+          <div class="tier on">
+            <p class="t-tag">现在这版</p>
+            <p class="t-num">¥ 30,000 — 35,600</p>
+            <p class="t-note">海岛和雨林都不省</p>
+          </div>
+          <div class="tier">
+            <p class="t-tag">放开一档</p>
+            <p class="t-num">¥ 37,000 — 44,000</p>
+            <p class="t-note">Sukau Lodge + Mantanani 高配</p>
+          </div>
+        </div>
+        <p class="rate-foot">汇率参考 · 1 SGD ≈ 5.32 / 1 MYR ≈ 1.72</p>
+      </div>
+    </section>
+
+    <!-- ====== SCHEDULE ====== -->
+    <section class="page page-list" data-page="schedule">
+      <div class="list-wrap">
+        <p class="page-kicker">10 / 参考</p>
+        <h2 class="page-title">节点</h2>
+        <p class="page-lede">五个节点，从现在到出发那一周。</p>
+
+        <ol class="timeline">
+          <li class="tl now">
+            <p class="tl-when">现在 · 5 月中</p>
+            <p class="tl-title">先把能退的都订上</p>
+            <ul>
+              <li>神山 lodge：余房紧，挑可退的先订</li>
+              <li>京那巴当岸 3D2N 问位：River Junkie / Tungog / Sukau</li>
+              <li>Manukan 与 Mantanani 各订一个可退备选</li>
+              <li>新加坡 3 晚 + 亚庇海边 2 晚酒店</li>
+            </ul>
+          </li>
+          <li class="tl">
+            <p class="tl-when">6 月初</p>
+            <p class="tl-title">补地接</p>
+            <ul>
+              <li>Kundasang 包车或山路接送</li>
+              <li>山打根段酒店</li>
+              <li>亚庇和山打根两侧的机场接驳</li>
+            </ul>
+          </li>
+          <li class="tl">
+            <p class="tl-when">6 / 15 — 6 / 17</p>
+            <p class="tl-title">做选择题</p>
+            <ul>
+              <li>京那巴当岸 operator 敲定（45 天余款节点）</li>
+              <li>海岛二选一：Manukan or Mantanani</li>
+              <li>多余的备选退掉</li>
+            </ul>
+          </li>
+          <li class="tl">
+            <p class="tl-when">7 / 5 前</p>
+            <p class="tl-title">收尾</p>
+            <ul>
+              <li>Mantanani 可退期截止（如果走 Mantanani）</li>
+              <li>剩下的可退备选全部清空</li>
+            </ul>
+          </li>
+          <li class="tl">
+            <p class="tl-when">出发前一周 · 7 / 16 起</p>
+            <p class="tl-title">复核 + 值机</p>
+            <ul>
+              <li>四家航司 App 都过一遍：新航 / RB / AirAsia / 川航</li>
+              <li>RB 时刻在 T-72h 和 T-24h 再核两次</li>
+              <li>行李、座位、值机开放时间、航站楼全部截图存好</li>
+              <li>新加坡 Arrival Card 与 马来西亚 MDAC：入境前 3 天内提交</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====== BACKSTAGE ====== -->
+    <section class="page page-list" data-page="backstage">
+      <div class="list-wrap">
+        <p class="page-kicker">11 / 幕后</p>
+        <h2 class="page-title">幕后</h2>
+        <p class="page-lede">航班核验、转机判断、风险预案。给自己看用。</p>
+
+        <details class="bs">
+          <summary>樟宜 T2 自转机：BI423 → 3U3920</summary>
+          <div class="bs-body">
+            <p>8 月 6 日晚最关键的一段。文莱航空两程（BI826 + BI423）按去哪儿连买可直挂到新加坡，但 RB 和川航之间没有联程，BI423 落地后必须取行李、入境、再去办 3U。</p>
+            <p>毛时间约 4 小时 40 分（BI423 大约 20:30 到，3U3920 01:10 起飞）。樟宜对到离港旅客开放自动通关，正常情况下 22:00 前能从落地走到 3U 柜台。</p>
+            <p><b>执行顺序：</b>先办 3U，再吃饭。把登机牌和行李的事先做完，剩下的时间才轻松。</p>
+            <p><b>风险触发：</b>BI423 延误超过 2 小时；行李迟迟不出；3U 临时换柜台或提前收柜。</p>
+          </div>
+        </details>
+
+        <details class="bs">
+          <summary>航班核验表</summary>
+          <div class="bs-body">
+            <table class="bs-table">
+              <thead><tr><th>航段</th><th>近期时刻</th><th>风险</th></tr></thead>
+              <tbody>
+                <tr><td>SQ843 TFU→SIN</td><td>18:25 – 23:15 · T2</td><td>低</td></tr>
+                <tr><td>BI424 SIN→BWN</td><td>21:30 – 23:40 · T2 Row 9</td><td>低</td></tr>
+                <tr><td>BI827 BWN→BKI</td><td>19:30 – 20:10 · BKI T1</td><td>中 · 时刻待核</td></tr>
+                <tr><td>AK6490 BKI→SDK</td><td>12:25 – 13:10</td><td>低</td></tr>
+                <tr><td>AK6487 SDK→BKI</td><td>10:30 – 11:20</td><td>低</td></tr>
+                <tr><td>BI826 BKI→BWN</td><td>下午 · BKI T1</td><td>低</td></tr>
+                <tr><td>BI423 BWN→SIN</td><td>18:30 – 20:30 · SIN T2</td><td>中 · 接 3U</td></tr>
+                <tr><td>3U3920 SIN→TFU</td><td>01:10 – 05:55 · Row 9</td><td>中 / 高</td></tr>
+              </tbody>
+            </table>
+            <p class="tiny">RB 的公开运行表与票面在星期几上偶有不一致，T-14 天 / T-72 小时 / T-24 小时 各核一次。</p>
+          </div>
+        </details>
+
+        <details class="bs">
+          <summary>到机场要多早</summary>
+          <div class="bs-body">
+            <ul>
+              <li>新航 TFU 出发：提前 3 小时。</li>
+              <li>RB 樟宜出发：提前 3 小时，T2 Row 9 办理。</li>
+              <li>AirAsia BKI / SDK：提前 2 小时，柜台 45 分钟前截止。</li>
+              <li>川航樟宜出发：最晚 22:30 前到 Row 9 一带。BI423 落地后先办 3U，再吃饭。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="bs">
+          <summary>风险与预案</summary>
+          <div class="bs-body">
+            <ul>
+              <li><b>取消费：</b>整套行程优先选 free cancellation。订得早不重要，订得能退才重要。</li>
+              <li><b>BI423 大延误：</b>3U 段不同航司，改签自担。买覆盖 separate-ticket missed connection 的旅行保险。</li>
+              <li><b>RB 时刻变动：</b>三次复核窗口。如果出现改时改班号，尽量 7 月上半月就处理。</li>
+              <li><b>海岛船班与天气：</b>"船不开"才能退款；下雨浪大但船开，不退。Mantanani 房型优先选 fully refundable。</li>
+              <li><b>码头：</b>TARP 岛群已从旧 Jesselton Point 迁到 South Jetty。叫车让酒店或船公司直接发 WhatsApp 定位。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
