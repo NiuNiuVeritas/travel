@@ -395,6 +395,102 @@ p:last-child { margin-bottom: 0; }
   color: var(--muted);
 }
 
+/* ========== tickets ========== */
+.tickets-card {
+  margin-top: 24px;
+  padding: 28px 24px 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.ticket {
+  position: relative;
+  padding: 18px 18px 16px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: border-color 0.15s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.ticket:hover {
+  border-color: var(--line-2);
+  transform: translateY(-2px);
+}
+.ticket-route {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  margin: 0 0 4px;
+  letter-spacing: 0.02em;
+}
+.ticket-tag {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--orange);
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+.ticket-legs {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+  flex: 1;
+}
+.ticket-legs li {
+  display: grid;
+  grid-template-columns: 36px 56px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 12px;
+  color: var(--ink-2);
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(42, 34, 26, 0.06);
+}
+.ticket-legs li:last-child { border-bottom: none; }
+.lg-d {
+  font-family: var(--serif);
+  color: var(--orange);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.lg-f {
+  font-family: var(--sans);
+  color: var(--ink-2);
+  letter-spacing: 0.06em;
+  font-size: 11px;
+}
+.lg-p {
+  font-family: var(--serif);
+  color: var(--ink);
+  font-size: 12px;
+}
+.ticket-price {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--orange);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.ticket-per {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
 /* ========== map ========== */
 .map-card {
   margin-top: 24px;
